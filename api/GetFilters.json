@@ -1,0 +1,152 @@
+[
+  {
+    "col": 1,
+    "row": 2,
+    "name": "filter_name",
+    "placeholder": "Name",
+    "type": "text",
+    "width": 20,
+    "maxLength": 50
+  },
+  {
+    "col": 1,
+    "row": 1,
+    "name": "filter_hpid",
+    "placeholder": "EID",
+    "type": "text",
+    "width": 10,
+    "maxLength": 8
+  },
+  {
+    "col": 2,
+    "row": 1,
+    "name": "filter_revregion_id",
+    "placeholder": "Rev Region",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "description": "WW"
+      },
+      {
+        "value": 1,
+        "description": "UKIIMEA"
+      },
+      {
+        "value": 2,
+        "description": "NCE"
+      },
+      {
+        "value": 3,
+        "description": "South"
+      },
+      {
+        "value": 4,
+        "description": "AMS"
+      },
+      {
+        "value": 5,
+        "description": "ANZ"
+      },
+      {
+        "value": 6,
+        "description": "ASIA"
+      }
+
+    ]
+  },
+  {
+    "col": 2,
+    "row": 3,
+    "name": "filter_countryid",
+    "placeholder": "Country",
+    "type": "select",
+    "options": [
+      {
+        "value": 1,
+        "description": "UK"
+      },
+      {
+        "value": 2,
+        "description": "Germany"
+      },
+      {
+        "value": 3,
+        "description": "France"
+      },
+      {
+        "value": 4,
+        "description": "Netherlands"
+      }
+
+    ]
+  },
+  {
+    "col": 3,
+    "row": 1,
+    "name": "filter_masterteam",
+    "placeholder": "Area",
+    "type": "select",
+    "options": [
+      {
+        "value": "Deliver",
+        "description": "Deliver"
+      },
+      {
+        "value": "Consult",
+        "description": "Consult"
+      },
+      {
+        "value": "GCC",
+        "description": "GCC"
+      },
+      {
+        "value": "MSS",
+        "description": "MSS"
+      },
+      {
+        "value": "Misc",
+        "description": "Misc"
+      }
+
+    ]
+  },
+  {
+    "col": 3,
+    "row": 1,
+    "name": "filter_capability",
+    "placeholder": "Capability",
+    "type": "select",
+    "options": [
+      {
+        "value": "",
+        "description": "Cyber Defence"
+      },
+      {
+        "value": 2,
+        "description": "Digital Identity"
+      },
+      {
+        "value": 3,
+        "description": "Solutioning"
+      }
+
+    ]
+  },
+  {
+    "col": 1,
+    "row": 3,
+    "name": "filter_manager",
+    "placeholder": "Manager",
+    "type": "text",
+    "width": 20,
+    "maxLength": 50
+  },
+  {
+    "name": "filter_page",
+    "placeholder": "Page",
+    "type": "number",
+    "min": 1,
+    "width": 3
+  }
+]

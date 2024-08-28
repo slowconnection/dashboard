@@ -1,0 +1,117 @@
+[
+  {
+    "id": 0,
+    "chartType": "sf-wonfcst",
+    "outputType": "chart",
+    "measure": "tcv",
+    "type": "bar",
+    "colorType": "keyword",
+    "header": "SFDC: Won and Forecast (TCV $m)",
+    "divideBy": 1000000
+  },
+  {
+    "id": 1,
+    "chartType": "sf-tcv-topaccounts",
+    "measure": "tcv",
+    "outputType": "table",
+    "type": "",
+    "header": "SFDC: Top Accounts (TCV $m)",
+    "divideBy": 1000000
+  },
+  {
+    "id": 2,
+    "chartType": "sf-pipe",
+    "measure": "tcv",
+    "outputType": "chart",
+    "type": "bar",
+    "colorType": "keyword",
+    "header": "SFDC: Pipeline (TCV $m)",
+    "divideBy": 1000000
+  },
+  {
+    "id": 3,
+    "chartType": "sf-won-lob",
+    "measure": "tcv",
+    "outputType": "chart",
+    "type": "doughnut",
+    "colorType": "standard",
+    "header": "SFDC: Won by Offering (TCV $m)",
+    "divideBy": 1000000
+  },
+  {
+    "id": 4,
+    "chartType": "hz-rev",
+    "measure": "rev",
+    "outputType": "chart",
+    "type": "bar",
+    "colorType": "keyword",
+    "header": "Horizon: Revenue (Fixed $m)",
+    "divideBy": 1000000
+  },
+  {
+    "id": 5,
+    "chartType": "hz-rev-topaccounts",
+    "measure": "rev",
+    "outputType": "table",
+    "type": "",
+    "header": "Horizon: Top Revenue Accounts (Fixed $m)",
+    "divideBy": 1000000
+  },
+  {
+    "id": 6,
+    "chartType": "oabs-revregion-hours",
+    "measure": "hours",
+    "outputType": "chart",
+    "type": "bar",
+    "colorType": "keyword",
+    "header": "U&B: Timesheet (Hours '000)",
+    "divideBy": 1000
+  },
+  {
+    "id": 7,
+    "chartType": "oabs-revregion-count",
+    "measure": "employees",
+    "outputType": "chart",
+    "type": "bar",
+    "colorType": "keyword",
+    "header": "U&B: Timesheet (# Employees)",
+    "divideBy": 1
+  },
+  {
+    "id": 8,
+    "chartType": "ppmc-projecthealth-byoffering",
+    "measure": "projects",
+    "outputType": "chart",
+    "type": "bar",
+    "colorType": "keyword",
+    "header": "PPMC: Projects by Overall Health",
+    "divideBy": 1
+  },
+  {
+    "id": 9,
+    "chartType": "ppmc-red",
+    "measure": "projects",
+    "outputType": "table",
+    "type": "",
+    "header": "PPMC: Accounts with Red/Yellow Projects",
+    "divideBy": 1
+  },
+  {
+    "id": 10,
+    "chartType": "ppmc-projects",
+    "measure": "red",
+    "outputType": "table",
+    "type": "",
+    "header": "PPMC: Red Projects",
+    "divideBy": 1000000
+  },
+  {
+    "id": 11,
+    "chartType": "ppmc-projects",
+    "measure": "yellow",
+    "outputType": "table",
+    "type": "",
+    "header": "PPMC: Yellow Projects",
+    "divideBy": 1000000
+  }
+]

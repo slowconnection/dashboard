@@ -1,0 +1,567 @@
+@import "menu.css?t=200403.1605";
+@import "popup.css?t=200403.1605";
+@import "datepickercontrol.css?t=200403.1605";
+
+:root {
+    --main-bg: #000;
+    --main-fg: #fff;
+}
+
+        * {
+            margin: 0;
+            font-family: Arial, Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+        html, body {
+            height: 100%;
+            color: var(--main-fg);
+            background-color:var(--main-bg);   
+        }
+        nav {
+            height:26px;
+        }
+        body.wb {
+            color: var(--main-fg);
+            background-color:var(--main-bg);    
+        }
+        .wrapper {
+            min-height: 100%;
+            margin-bottom: -30px;
+        }
+        .wrapper:after {
+            content:"";
+            display:block;
+        }
+        .wrapper:after, .push {
+            height:20px;
+        }
+
+        /* New page structure   */
+        #page-container {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #content-wrap {
+            padding-bottom: 2.5rem; /* Footer height */
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2.5rem; /* Footer height */
+        }
+
+        ::placeholder, ::-ms-input-placeholder {color:lightgrey; opacity:0.8}
+        select.placeholder {background-color:#fff; color:lightgrey}
+        select.placeholder option {background-color:#fff; color:#000}
+        select.selected {background-color:orange}
+        select.selected option{background-color:#fff}
+
+        .javascript-warning {
+            color: yellow;
+
+        }
+
+
+/* Links */
+    A:link {color:#08baef; text-decoration:none}
+    A:visited {color:#08baef; text-decoration:none}
+    A:hover {color:#FDD017; text-decoration:underline}
+
+
+
+/* Default Summary elements */
+        #divFilter {
+            width:100%;
+            padding:10px 0px 5px 0px;
+        }
+        #tblFilter {
+	        border:1px solid #999;
+	        padding: 1px 5px 1px 5px;
+	        background-color:#333;
+	        position:relative;
+	        margin:auto;
+        }
+        #tblFilter caption {
+            background:#369;
+            color:#fff;
+            font-weight:bold;
+            font-size:larger;
+        }
+
+        #divResults 
+        {
+            width:100%;
+            padding:15px 0px 0px 0px;
+        }
+        #divResults table {margin:auto}
+        #tblResults, #tblPaddedResults, table.tblResults {
+	        border:1px solid #666;
+	        padding:1px;
+	        background-color: var(--main-bg);
+        }
+        #tblResults caption, table.tblResults caption {
+            padding-top:5px;
+            background:#369;
+            color:#fff;
+            font-weight:bold;
+            font-size:larger;
+        }
+        #tblResults>tr>td {overflow:hidden; white-space:nowrap;}
+        span.currentPage {font-size:large; background-color:#222}
+
+
+
+/* Generic Table Elements */
+        th {background-color:#444}
+
+        tr.DarkRow {background-color: var(--main-bg);}
+        tr.DarkRow:hover {background-color:#333}
+        tr.DarkRow td {color:#aaa; color:#fff}
+        
+        tr.OddRow {background-color:#111; color:#fff}
+        tr.EvenRow {background-color:#222; color:#fff}
+        tr.OddRow:hover {background-color:#555; color:#fff}
+        tr.EvenRow:hover {background-color:#555; color:#fff} 
+
+        tr.NewRow {background-color:#444; color:#fff}
+        tr.NewRow:hover {background-color:#aaa; color:#fff}
+
+        tr.SubHeaderRow{background-color:#555}
+        tr.SubHeaderRow:hover{background-color:#aaa;}
+        tr.SubHeaderRow td{border-bottom:1px solid #aaa}
+        
+        tr.ClearSubHeaderRow{height:20px}
+        tr.ClearSubHeaderRow td{border-bottom:1px solid #aaa; color:yellow}        
+        
+        tr.TotalRow {font-weight:bold; font-size: 11px; height:20px}
+        tr.TotalRow td {border-top:1px solid #444; border-bottom:1px solid #444}  
+        
+        tr.BigTotalRow {font-weight:bold; font-size: 11px; height:25px; vertical-align:middle}
+        tr.BigTotalRow td {border-top:1px solid #444; border-bottom:1px solid #444}
+
+        tr.FilterRow td {background-color:#555; color:#ff0;}
+
+        .lbl {color:forestgreen; text-align:right; user-select:none}
+        .hide {display:none}
+        table.fixed {table-layout:fixed}
+        table.fixed td {white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+        
+
+/* Form Elements */
+        .Separator {background-color:transparent; width:3px}
+        .filterElement {float:left; margin-right:10px; padding-top:3px; padding-bottom:3px}
+        textarea {resize:vertical}
+
+             
+/* Buttons */        
+        .btn {
+            cursor:pointer;
+            background : rgb(255, 255, 255) url('/lib/img/greengrad.gif');
+            font-size: 8.5px;
+            color: #fff;
+            width:80px;
+            height:20px;
+            font-weight:bold;
+        }
+
+        .orangebtn {
+            cursor:pointer;
+            background : rgb(255, 255, 255) url('/lib/img/orangegrad.gif');
+            font-size: 8.5px;
+            color: #000;
+            width:80px;
+            height:20px;
+            font-weight:bold;
+        }
+
+        .redbtn {
+            cursor:pointer;
+            background : rgb(255, 255, 255) url('/lib/img/redgrad.gif');
+            font-size: 8.5px;
+            color: #fff;
+            width:80px;
+            height:20px;
+            font-weight:bold;
+        }
+        
+        .greybtn {
+            cursor:pointer;
+            background : rgb(255, 255, 255) url('/lib/img/greygrad.gif');
+            font-size: 8.5px;
+            color: #000;
+            width:80px;
+            height:20px;
+            font-weight:bold;
+        }
+        .smallbtn {
+            cursor:pointer;
+            background : rgb(255, 255, 255) url('/lib/img/redgrad.gif');
+            font-size: 8.5px;
+            color: #000;
+            width:14px;
+            height:12px;
+            font-weight:bold;
+            border:1px solid #333;
+        }
+        
+        .btnHyperlink {
+            background:transparent;
+            border:0;
+            font-size: 12px;
+            color: #08baef;
+            text-align:left;
+            display:inline;
+            cursor:pointer;
+        }
+        .btnChange {
+            background:transparent;
+            border:0;
+            font-size: 12px;
+            color: #08baef;
+            display:inline;
+            cursor:pointer;
+            margin-left:3px;
+        }
+        .btnHyperlinkRight {background:transparent; border:0; font-size: xx-small; color: #08baef; text-align:right; display:inline; cursor:pointer; width:100%}
+        
+        .btnNav, .btnNav10,
+        .btnSchAdd, btnSchEdit, btnSchEditM, btnSchDel
+        .btnLeft, .btnRight, 
+        .btnKey, 
+        .btnSearch, 
+        .btn32, 
+        .btnExcel, 
+        .btnReset, 
+        .btnEdit, 
+        .btnAdd, 
+        .btnDel {opacity:0.7; filter: alpha(opacity=70)}
+        
+        .btnNav:hover, .btnNav10:hover, 
+        .btnSchAdd:hover, btnSchEdit:hover, btnSchEditM:hover, btnSchDel:hover
+        .btnLeft:hover, .btnRight:hover,
+        .btnKey:hover,
+        .btnSearch:hover,
+        .btn32:hover,
+        .btnExcel:hover,
+        .btnReset:hover,
+        .btnEdit:hover,
+        .btnAdd:hover,
+        .btnDel:hover {opacity:1.0; filter: alpha(opacity=100)}
+        .btnKey {background:url(/lib/img/info-32.png); height:32px; width:32px; cursor:pointer; border:0} 
+        .btnLeft {background:url(/lib/img/arrow-left-double-icon.png); height:32px; width:32px; cursor:pointer; border:0} 
+        .btnRight {background:url(/lib/img/arrow-right-double-icon.png); height:32px; width:32px; cursor:pointer; border:0} 
+        .btnDown {background:url(/lib/img/sign-down-icon.png); height:20px; width:20px; cursor:pointer; border:0; vertical-align:top} 
+        .btnUp {background:url(/lib/img/sign-up-icon.png); height:20px; width:20px; cursor:pointer; border:0; vertical-align:top} 
+        .btnSearch {background:url(/lib/img/search-32.png); height:32px; width:32px; cursor:pointer; border:0}             
+        .btnExcel {background:url(/lib/img/Microsoft-Excel-icon.png); height:32px; width:32px; cursor:pointer; border:0}            
+        .btnReset {background:url(/lib/img/reset-button-icon.png); height:32px; width:32px; cursor:pointer; border:0}  
+        .btn32 {cursor:pointer; border:0; height:32px; width:32px} 
+        .btnNav {height:12px; width:12px; cursor:pointer; border:0}
+        .btnNav10 {height:10px; width:10px; cursor:pointer; border:0}
+        .btnSchAdd{background:url(/lib/img/add-icon-32.png); height:24px; width:24px; cursor:pointer}
+        .btnSchEdit{background:url(/lib/img/edit-icon-32.png); height:24px; width:24px; cursor:pointer}
+        .btnSchEditM{background:url(/lib/img/series-icon-32.png); height:24px; width:24px; cursor:pointer}
+        .btnSchDel{background:url(/lib/img/bin-32x32.png); height:24px; width:24px; cursor:pointer}
+
+        .btnEdit {background:url(/lib/img/edit-24x24.png); height:24px; width:24px; cursor:pointer}
+        .btnDel {background-color:#f44336; color:#fff; cursor:pointer}
+        .btnAdd {background-color:#4caf50; color:#fff; cursor:pointer}
+        .btnClose {background:url(/lib/img/close-icon-20.png); background-size:contain; height:20px; width:20px; cursor:pointer; float:right; border:0; z-index:2}
+
+        .disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /*New Nav Buttons*/
+        td.paging-container {background-color:#333;}
+        button {
+            padding:0;
+            border:0;
+            vertical-align: middle;
+        }
+        .btnNavFirst, .btnNavNext, .btnNavPrevious, .btnNavLast {
+            opacity:0.7; 
+            filter: alpha(opacity=70);
+            height:12px; 
+            width:12px; 
+            cursor:pointer; 
+            border:0px;
+            background-color: transparent;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size:contain;
+            margin-bottom:2px;
+        }
+        .btnNavFirst:hover, .btnNavNext:hover, .btnNavPrevious:hover, .btnNavLast:hover {
+            opacity:1.0; filter: alpha(opacity=100)
+        }
+
+        .btnNavFirst {background-image:url(/lib/img/nav_first.gif)}
+        .btnNavPrevious {background-image:url(/lib/img/nav_previous.gif)}
+        .btnNavNext {background-image:url(/lib/img/nav_next.gif)}
+        .btnNavLast {background-image:url(/lib/img/nav_last.gif)}
+        
+
+/* Misc */
+    .l {text-align:left}
+    .r {text-align:right}
+    .c {text-align:center}
+    .b {font-weight:bold}
+    .c100 {text-align:center; width:100%; display:block}
+    .rb {text-align:right; font-weight:bold}
+    .cb {text-align:center; font-weight:bold}
+    .nw {white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .alert {text-align:center; background-color:#f00; color:yellow; font-weight:bold; padding:0px 5px 0px 5px}
+
+    img.icon {border:0; height:12px; width:12px}
+    img.flag {border:0; height:14px; width:14px}
+    img.smallflag {border:0; height:8px; width:10px; margin-right:2px; opacity:0.8; filter: alpha(opacity=80)}
+    .kpiG {display:block; width:90%; background-color:rgb(100,255,0)/*#088A08*/; color:#000;}
+    .kpiGR {display:block; width:90%; background-color:rgb(0,176,80); color:#fff}
+    .kpiA {display:block; width:90%; background-color:orange; color:#000;}
+    .kpiR {display:block; width:90%; background-color:#f00; color:#fff}
+    .kpiX {display:block; width:90%; background-color:transparent;}
+    .sortable {cursor:pointer;}
+    .sorted {border:1px solid green}
+    .RAGR {color:#F00; margin-right:2px; padding:0px; font-size:0.845em}
+    .RAGG {color:#088A08; margin-right:2px; padding:0px; font-size:0.845em}
+    .spacer {background-color:transparent; width:20px}
+    .optionL4 {color: #FFF; background-color: #FF6600}
+    .optionL3 {color: #000; background-color: #FF9900}
+    .optionL2 {color: #000; background-color: #FFCC00}
+    .optionL1 {color: #000; background-color: #FFFF00}
+    .optionL0 {color: #000; background-color: orange;}
+    .optionGrey {color: Gray} 
+    .optionPlaceholder {background-color:#fff; color:lightgray} 
+    .option_fy {background-color: #ADFF2F}
+    .option_fh {background-color: #FFFACD}
+    .option_fq {background-color: #FFFFE0}
+    .option_fp {text-indent:15px}
+    
+/* Tables */
+    .green {color:#009933}
+    .amber {color:#ff9933}
+    .lime {color: rgba(0,204,34,0.8)}
+    .red {color:#f00; font-weight:bold}
+    .yellow {color:yellow}
+    .blue {color: lightblue}
+    .grey {color:#777}   
+    .cyan {color:#00FFFF}
+    tr.yellowOnGrey {background-color:#222}
+    tr.yellowOnGrey td {color:yellow; user-select:none}
+
+    .navtabon {background-color:#96F39F; color:#000; width:100px; text-align:center; display:inline-block}
+    .navtaboff {background-color:#009933; color:#000; width:100px; text-align:center; display:inline-block; cursor:pointer}
+
+#divQuickLinks {
+    text-align:center;
+    width:100%;
+}
+
+/*Multi-select*/
+.divMS {
+    border:1px solid #444;
+    position: absolute;
+    z-index:9999;
+    background-color: #eee;
+    color:#000;
+}
+
+.spnMS_on, .spnMS_off {
+    color:#000;
+    width:100%;
+    display:block;
+    float:left;
+    border:1px solid #ddd;
+    cursor:pointer;
+}
+
+.spnMS_on {
+    background-color:#ADFF2F;
+}
+
+.spnMS_on:hover, .spnMS_off:hover {
+    border:1px solid yellow;
+}
+
+.colMS {display:block; float:left;}
+
+td.click{border:0; color:white} 
+td.click:hover{cursor:pointer; border:1px solid orange; color:yellow}
+input.searchbox {background: #FFFFE0 url(/lib/img/search-12x12.png) no-repeat; padding-left:18px; vertical-align:middle}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    filter : alpha(opacity=40);
+}
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  z-index:15;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#alertTD {
+    text-align:center;
+    background-color:#f00;
+    color:#fff;
+    font-weight:bold;
+}
+
+input.readonly {
+        border:0;
+        background-color:#eee;
+        text-align:center;
+}
+
+/* Remove spinners from number fields */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    .input-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .input-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+    }
+.drilldown {cursor:pointer}
+.drilldown:hover {border: 1pt solid yellow}
+.drilldown_caption {width:100%; background-color:blue; color:white; display:inline-block}
+
+
+
+.list-container {display:flex; flex-direction:column; flex-wrap:wrap}
+.list-item {
+    display:inline-flex; 
+    width:140px; 
+    border:1px solid #444; 
+    margin-right:5px; 
+    margin-bottom:2px;
+    padding:2px;
+}
+.primary {
+    color:darkblue;
+    background-color: lightblue;
+}
+#suboffer_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    margin-left:50px;
+    align-content: space-between;
+}
+.suboffer_item {
+    display: inline-flex;
+    width:45%;
+    margin-top:2px;
+    vertical-align:middle;
+}
+h3 {
+    width:100%;
+    background-color:#ddd;
+    padding: 2px 0px 2px 0px;
+}
+.suboffer_field {
+    margin: 0px 4px 0px 30px; 
+    text-align: center;
+
+}
+.suboffer_header {
+    user-select:none;
+}
+.so-1 {background-color: red; color: white}
+.so-2 {background-color: orange; color: white}
+.so-3 {background-color: green; color: white}
+.so-4 {background-color: blue; color: white}
+.so-5 {background-color: grey; color: white}
+.so-6 {background-color: purple; color: white}
+.so-9 {background-color: black; color: white}
+.padlr {padding:0px 4px 0px 4px; margin-right:5px;}
+
+#popupDetail {
+    z-index: 15;
+}
+
+#divChanges {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+/* IMAGES */
+img.deal-won,
+img.deal-pipeline,
+img.deal-commit,
+img.deal-commit-MC,
+img.deal-omitted
+{
+    width: 14px;
+    height: 14px;
+    box-sizing: border-box;
+    object-fit: contain;
+    margin: 0 5px 0 5px;
+}
+img.deal-won {
+    content: url(/lib/img/icons/deal-won.png);
+}
+img.deal-pipeline {
+    content: url(/lib/img/icons/deal-pipeline.png);
+    opacity: 0.5;
+    width: 14px;
+    height: 14px;
+}
+img.deal-commit {
+    content: url(/lib/img/icons/deal-commit.png);
+    opacity: 0.7;
+}
+img.deal-commit-MC {
+    content: url(/lib/img/icons/deal-commit-MC.png);
+    opacity: 0.9;
+}
+img.deal-omitted {
+    content: url(/lib/img/icons/deal-omitted.png);
+}
+
+
+.filterGroup {
+    width:150px;
+}
+
+.filterGroup select {
+    width:100%;
+}

@@ -1,0 +1,254 @@
+﻿/* HTTP pop ups */
+    .nodrag {
+        cursor: default;
+    }
+    .popupDiv {
+        background-color: #eee;
+        color: #000;
+        border: outset 3px #eee; /*#006400;*/
+        position: absolute;
+        height: 400px;
+        width: 450px;
+        margin: 0;
+        font-size: 10px;
+    }
+    .popupCaption {
+        width: 100%;
+        background-color: #96F39F;
+        color: #000;
+        font-weight: bold;
+        height: 20px;
+        font-size:12px;
+        cursor: move;
+    } 
+    .popupCaption img {
+        float: right; 
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }  
+    
+    
+    .popupWrapper {width:100%; height:100%; position:relative} 
+    .popupWrapper table {width:100%}
+    .popupWrapper tfoot td {border-top:1px solid #000; border-bottom:1px solid #000; font-weight:bold} 
+    .popupContent {width:100%; height:610px; display:inline-block; overflow-y: auto; overflow-x:hidden; background-color:#fff}
+    .popupContentDark {width:100%; height:610px; display:inline-block; overflow-y: auto; overflow-x:hidden;}
+    .popupMessage {position:absolute; left:0px; bottom:20px;width:100%; height:15px; text-align:center}
+    .popupFooter {position:absolute; left:0px; bottom:0px; width:100%; height:20px; background-color:#96F39F; text-align:center; cursor:move}
+
+
+
+    
+/* TABLE ELEMENTS (all from EPM) */
+    .popupDiv table {width:100%}
+    .popupDiv table tr {vertical-align:top}
+    .popupDiv table th.lbl {background:none; background-color:#fff; width:200px; text-align:right; font-weight:normal; color:#000}
+    .popupDiv table th.lblreq {background:none; background-color:#fff; width:200px; text-align:right; color:#ff0000}
+    .popupDiv table th.subth {background: rgb(255, 255, 255) url('/lib/img/greengrad.GIF'); font-variant: small-caps; color:#fff; font-size:12px}
+    .popupDiv table th.subth2 {background: rgb(255, 255, 255) url('/lib/img/orangegrad.GIF'); font-variant: small-caps; color:#fff; font-size:12px}
+    
+    .popupDiv .sqlmessage {float:left; position:absolute; left:0px; font-weight:bold; padding-left:5px; padding-right:5px}
+    
+    .FixedTable {
+        width:100%;
+        color:#fff;
+        table-layout:fixed;
+        border-collapse: collapse;
+        border-spacing: 0px
+    }
+    .FixedTable caption {
+        background-color:#85E28E;
+        color:#000;
+        font-weight:bold;
+        font-size:10px;
+        text-align:left
+    }
+    .FixedTable tr {
+        height:auto; 
+        vertical-align:middle; 
+        border-bottom:1px solid #444
+    }
+    .FixedTable th {
+        background-color: #99CCCC;
+        border: 1px #000000 solid;
+        font-family: Verdana;
+        font-weight: normal;
+        font-variant: normal;
+        color: #404040;
+        border:1px solid #333;  
+        font-size:x-small;
+        white-space:nowrap;
+    }
+    
+    .FixedTable td {
+        font-family: Verdana, sans-serif, Arial;
+        font-weight: normal;
+        overflow:hidden;
+        font-size:xx-small;
+        white-space:nowrap;   
+    }
+
+    .FixedTable input {width:95%}
+    
+    .rov {
+        text-align:left;
+        font-weight: bold;
+        border:0;
+        background-color:Transparent;
+    }
+    
+
+/* MODAL */
+    .divModal {width:100%; background-color:#fff}
+    .divModal table {background-color:#fff; color:#000}
+    
+    .divModal fieldset {
+        width:90%; 
+        display:block; 
+        border:1px solid #000; 
+        padding:5px; 
+        margin-bottom:0.5em; 
+        margin-left: 13px;
+        padding-bottom:2px;
+        line-height:1.2em;
+    }
+
+    .divModal legend {
+        font-size:1.1em; 
+        font-weight:bold; 
+        color: #000;
+        margin: 0 0 5px 10px; 
+        height: 24px;
+        line-height: 24px;
+        width:300px; 
+        border: 1px solid #137C41;
+        padding: 0 5px;
+        background: url(/lib/img/legend_bg.gif);
+    }
+
+    .divModal label {
+        clear:left; 
+        float:left;
+        width:100px; 
+        text-align:right; 
+        color: #003399; 
+        margin-bottom:7px;
+        font-size:9px;
+    }
+
+
+    .divModal .readonlyvalue {
+        text-align:left;
+        border:1px #eee solid;
+        background-color:#eeeeee;
+    }
+
+    .divModal .textfield {
+        border:1px #ccc solid;
+    }
+
+    .divModal .textrequired {
+        /*border:1px #ff0000 solid;*/
+        border-left:3px #ff0000 solid;
+    }
+    
+    .divModal h3 {color:#000}
+    
+    .divModal table.CellPopup {
+        font-size:10px;
+        border:1pt solid #bbb;
+    }
+    .divModal table.CellPopup th {
+        color:#fff; 
+        font-size:10px;
+        background-color:#f00;
+        padding:0px;
+        border-spacing:0;
+    }
+    .divModal table.CellPopup td {
+        font-size:10px;
+        padding:0px;
+        border-bottom:1px solid #ddd; 
+        border-right:1px solid #ddd;    
+        border-spacing:0;
+    }
+    .divModal .chkBasic {
+        border:none;
+        display:inline;
+        margin:0px 0px 0px 0px;
+        padding:0px 0px 0px 0px;
+        height:12px;
+        background-color:transparent;
+    }
+
+    .divTab table {
+        width:100%;
+        border:0px;
+        padding:0px;
+        margin:0px;
+        border-collapse: collapse;
+        border-spacing: 0px;
+        background-color:#fff;
+        color:#000;
+    }
+
+    .divTab table th {
+        background-color:#ddd;
+        color:#000;
+    }
+    
+    #divTabbedMenu span {
+        height:20px;
+        vertical-align:middle;
+        display:inline-block;
+        float:left;
+    }
+    .tabOffBg {
+        background: url("/lib/img/tab.off.bg.gif");
+        padding-left:10px;
+        padding-right:10px;
+        color:#fff;
+        cursor:pointer;
+    }
+    .tabOnBg{
+        background: url("/lib/img/tab.on.bg.gif");
+        color:yellow;
+        font-weight:bold;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    .tabBg {
+        width:100%; 
+        background: url("/lib/img/tab.on.bg.gif");
+    }
+    .tabSepOnOff {
+        background: url("/lib/img/tab.on.off.separator.gif");
+        width:2px;
+    }
+    .tabSepOffOn {
+        background: url("/lib/img/tab.off.on.separator.gif");
+        width:2px;
+    }
+    .tabSepEnd {
+       background: url("/lib/img/tab.separator.end.gif");
+       width:2px;
+    }
+
+    #drilldown_div {
+        background-color:#333
+    }
+    #drilldown_menu td {
+        background-color:#444;
+        padding-left:10px;
+    }
+    #drilldown_header {
+        color:#fff;
+        cursor:pointer;
+    }
+
